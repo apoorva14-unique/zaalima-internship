@@ -1,0 +1,6 @@
+# Ignore large datasets
+*.csv
+
+# But keep structure
+!data/raw/
+!data/processed/

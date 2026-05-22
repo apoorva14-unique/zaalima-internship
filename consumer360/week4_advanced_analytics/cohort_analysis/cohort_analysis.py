@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load data
-df = pd.read_csv('data/raw/retail.csv', encoding='ISO-8859-1')
+df = pd.read_csv('consumer360/data/raw/retail.csv', encoding='ISO-8859-1')
 
 # Cleaning
 df = df.dropna(subset=['CustomerID'])
@@ -20,6 +20,6 @@ df['CohortMonth'] = df.groupby('CustomerID')['InvoiceMonth'].transform('min')
 print(df[['CustomerID', 'InvoiceMonth', 'CohortMonth']].head())
 
 # Save
-df.to_csv('week4_advanced_analytics/cohort_analysis/cohort_output.csv', index=False)
+df.to_csv('consumer360/week4_advanced_analytics/cohort_analysis/cohort_output.csv', index=False)
 
 print("✅ Cohort Analysis Completed")

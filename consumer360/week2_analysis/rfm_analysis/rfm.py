@@ -3,7 +3,7 @@ import numpy as np
 
 # ---------------- LOAD DATA ----------------
 
-df = pd.read_csv('data/raw/Retail.csv', encoding='ISO-8859-1')
+df = pd.read_csv('consumer360/data/raw/Retail.csv', encoding='ISO-8859-1')
 
 print("Initial Shape:", df.shape)
 
@@ -73,6 +73,6 @@ rfm['CLV'] = rfm['Monetary'] * rfm['Frequency']
 print("\nSegment Distribution:")
 print(rfm['Segment'].value_counts())
 
-rfm.to_csv('week2_analysis/segmentation/rfm_output.csv')
+rfm.to_csv('consumer360/week2_analysis/segmentation/rfm_output.csv')
 
 print("\n✅ RFM Analysis Completed")

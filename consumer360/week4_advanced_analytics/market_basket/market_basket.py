@@ -3,7 +3,7 @@ from mlxtend.frequent_patterns import apriori, association_rules
 from mlxtend.preprocessing import TransactionEncoder
 
 # Load dataset
-df = pd.read_csv('data/raw/retail.csv', encoding='ISO-8859-1')
+df = pd.read_csv('consumer360/data/raw/retail.csv', encoding='ISO-8859-1')
 
 # Cleaning
 df = df.dropna(subset=['Description'])
@@ -28,6 +28,6 @@ rules = association_rules(frequent_items, metric="lift", min_threshold=1)
 print(rules[['antecedents', 'consequents', 'support', 'confidence', 'lift']].head())
 
 # Save output
-rules.to_csv('week4_advanced_analytics/market_basket/market_basket_output.csv', index=False)
+rules.to_csv('consumer360/week4_advanced_analytics/market_basket/market_basket_output.csv', index=False)
 
 print("✅ Market Basket Analysis Completed")

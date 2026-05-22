@@ -1,6 +1,7 @@
-# Ignore large datasets
-*.csv
+# Ignore large temporary datasets
+data/raw/*.csv
 
-# But keep structure
-!data/raw/
-!data/processed/
+# Keep processed outputs
+!week2_analysis/**/*.csv
+!week3_dashboard/**/*.csv
+!week4_advanced_analytics/**/*.csv

@@ -19,6 +19,8 @@ final = final[[
     "Recency",
     "Frequency",
     "Monetary",
+    "InvoiceDate",
+    "Description",
     "Segment"
 ]]
 

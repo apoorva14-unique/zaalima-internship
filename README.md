@@ -1,9 +1,20 @@
 # Consumer360 – Customer Segmentation & CLV Engine
 
 ## 📌 Project Overview
-Consumer360 is a retail analytics project focused on customer segmentation and business insights using transactional retail data. The project uses RFM (Recency, Frequency, Monetary) analysis, Customer Lifetime Value (CLV), Market Basket Analysis, and Cohort Analysis to identify customer behavior patterns and improve business decision-making.
+Consumer360 is a retail analytics project focused on customer segmentation and business insights using transactional retail data.
 
-The project also includes an automated analytics pipeline and an interactive Power BI dashboard for visualization.
+The project uses:
+- RFM (Recency, Frequency, Monetary) Analysis
+- Customer Lifetime Value (CLV)
+- Market Basket Analysis
+- Cohort Analysis
+
+to identify customer behavior patterns and improve business decision-making.
+
+The project also includes:
+- Automated analytics pipeline
+- Interactive Power BI dashboard
+- Business insight generation
 
 ---
 
@@ -48,6 +59,7 @@ data/raw/Retail.csv
 # 📊 Project Workflow
 
 ## 🔹 Week 1 – Data Engineering
+### Tasks Performed
 - Explored and inspected dataset
 - Removed null CustomerID values
 - Removed invalid/negative transactions
@@ -55,16 +67,23 @@ data/raw/Retail.csv
 - Converted InvoiceDate into datetime format
 - Designed SQL schema and optimization queries
 
+### SQL Components
+- Data Cleaning Queries
+- Date Transformation Queries
+- Index Optimization
+- Star Schema Design
+
 ---
 
 ## 🔹 Week 2 – Customer Segmentation (RFM Analysis)
-Calculated:
+
+### Calculated Metrics
 - Recency
 - Frequency
 - Monetary values
 
-Implemented:
-- RFM scoring
+### Implemented Features
+- RFM scoring system
 - Customer segmentation
 - CLV calculation
 - Validation checks
@@ -78,19 +97,28 @@ Implemented:
 
 ### Output Files
 ```text
-data/processed/rfm_output.csv
 week2_analysis/data_pipeline/cleaned_data.csv
+week2_analysis/segmentation/rfm_output.csv
 ```
 
 ---
 
 ## 🔹 Week 3 – Power BI Dashboard
-Created an interactive dashboard with:
+
+Created an interactive Power BI dashboard with:
 - Customer segmentation analysis
 - Revenue insights
 - Customer distribution
 - KPI cards
+- Revenue trend analysis
 - RFM visualizations
+
+### Dashboard Features
+- Revenue contribution by segment
+- Customer distribution analysis
+- Monthly revenue trend
+- Customer segmentation scatter analysis
+- Interactive slicers and filters
 
 ### Dashboard Preview
 
@@ -99,14 +127,18 @@ Created an interactive dashboard with:
 ---
 
 ## 🔹 Week 4 – Advanced Analytics
+
 ### Market Basket Analysis
-- Applied Apriori Algorithm
-- Generated association rules
-- Identified products frequently purchased together
+Implemented Association Rule Mining using Apriori Algorithm to:
+- Identify products frequently purchased together
+- Generate association rules
+- Discover customer purchasing patterns
 
 ### Cohort Analysis
-- Analyzed customer retention behavior
-- Grouped customers based on first purchase month
+Performed customer retention analysis by:
+- Grouping customers based on first purchase month
+- Tracking repeat customer behavior
+- Understanding retention trends
 
 ### Automation Pipeline
 Integrated:
@@ -115,7 +147,8 @@ Integrated:
 - Market Basket Analysis
 - Cohort Analysis
 
-Run full pipeline using:
+Run the complete pipeline using:
+
 ```bash
 python week4_advanced_analytics/automation/run_pipeline.py
 ```
@@ -126,8 +159,8 @@ python week4_advanced_analytics/automation/run_pipeline.py
 - Champions are high-value repeat customers
 - At Risk customers indicate possible churn
 - Segmentation improves targeted marketing
-- Market Basket Analysis helps product recommendations
-- Cohort Analysis helps understand customer retention
+- Market Basket Analysis helps product recommendation systems
+- Cohort Analysis helps understand customer retention behavior
 
 ---
 
@@ -177,3 +210,14 @@ python week4_advanced_analytics/automation/run_pipeline.py
 ```
 
 ---
+
+# ✅ Project Outcome
+Consumer360 successfully delivers:
+- Automated retail analytics workflow
+- Customer segmentation engine
+- Churn-risk identification
+- Customer behavior analysis
+- Interactive business dashboard
+- Advanced analytics and retention insights
+
+The project demonstrates end-to-end data analytics implementation using SQL, Python, and Power BI.

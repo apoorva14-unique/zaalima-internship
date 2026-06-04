@@ -1,4 +1,14 @@
-# Ignore large temporary datasets
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore large temporary raw datasets
 data/raw/*.csv
 
 # Keep processed outputs

@@ -1,8 +1,11 @@
+# AlphaPulse - Stock Data Collection
+# Week 1 Data Collection
+
 import yfinance as yf
 import pandas as pd
 import time
 
-# Stock List
+# Stock symbols
 stocks = [
     "AAPL",
     "MSFT",
@@ -17,14 +20,16 @@ stocks = [
     "^GSPC"
 ]
 
+# Empty dataframe
 all_data = pd.DataFrame()
 
 print("Downloading stock market data...\n")
 
-# Download one by one
+# Download stock data one by one
 for stock in stocks:
 
     try:
+
         print(f"Downloading {stock}...")
 
         data = yf.download(
@@ -35,21 +40,27 @@ for stock in stocks:
             progress=False
         )
 
+        # Store closing prices
         all_data[stock] = data['Close']
 
+        # Delay to avoid API issues
         time.sleep(2)
 
     except Exception as e:
 
-        print(f"Failed for {stock}: {e}")
+        print(f"Failed to download {stock}: {e}")
 
-# Show Data
-print("\nSample Data:")
+# Add Date column
+all_data.reset_index(inplace=True)
+
+# Preview dataset
+print("\nDataset Preview:")
 print(all_data.head())
 
-# Save CSV
+# Save dataset
 all_data.to_csv(
-    "alphapulse/data/raw/stock_prices.csv"
+    "alphapulse/data/raw/stock_prices.csv",
+    index=False
 )
 
-print("\n✅ Stock data downloaded successfully!")
+print("\n✅ Stock market dataset downloaded successfully!")

@@ -1,22 +1,38 @@
+# AlphaPulse - Data Cleaning
+# Week 1 Data Cleaning
+
 import pandas as pd
 
 # Load dataset
-df = pd.read_csv("../../data/raw/Retail.csv", encoding='latin1')
+df = pd.read_csv(
+    "alphapulse/data/raw/stock_prices.csv"
+)
+
+# Preview dataset
+print("Dataset Preview:\n")
+print(df.head())
 
 # Check missing values
-print("Missing values:")
+print("\nMissing Values:\n")
 print(df.isnull().sum())
 
 # Remove duplicate rows
 df = df.drop_duplicates()
 
-# Convert Date column
-df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
+# Convert Date column to datetime
+df['Date'] = pd.to_datetime(df['Date'])
 
-# Fill missing values
-df.fillna(method='ffill', inplace=True)
+# Fill missing values using forward fill
+df = df.ffill()
+
+# Dataset information
+print("\nDataset Information:\n")
+print(df.info())
 
 # Save cleaned dataset
-df.to_csv("../../data/raw/cleaned_stock_data.csv", index=False)
+df.to_csv(
+    "alphapulse/data/raw/cleaned_stock_data.csv",
+    index=False
+)
 
-print("Data cleaning completed")
+print("\n✅ Data cleaning completed successfully!")

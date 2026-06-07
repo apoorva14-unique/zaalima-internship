@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Load returns data
+# Load returns dataset
 returns = pd.read_csv(
     'alphapulse/data/processed/daily_returns.csv'
 )
@@ -24,6 +24,9 @@ simulations = 50
 # Initial stock price
 start_price = 100
 
+# Random seed
+np.random.seed(42)
+
 plt.figure(figsize=(12, 6))
 
 # Run simulations
@@ -43,9 +46,10 @@ for i in range(simulations):
 
 # Chart settings
 plt.title(f'Monte Carlo Simulation - {stock}')
-
 plt.xlabel('Days')
 plt.ylabel('Simulated Price')
+
+plt.tight_layout()
 
 # Save plot
 plt.savefig(

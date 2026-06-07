@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load returns data
+# Load returns dataset
 returns = pd.read_csv(
     'alphapulse/data/processed/daily_returns.csv'
 )
@@ -15,7 +15,7 @@ corr = returns.corr()
 
 print(corr)
 
-# Plot heatmap
+# Create heatmap
 plt.figure(figsize=(12, 8))
 
 sns.heatmap(
@@ -32,10 +32,5 @@ plt.savefig(
 )
 
 # plt.show()
-
-# Save image
-plt.savefig(
-    'alphapulse/data/processed/correlation_heatmap.png'
-)
 
 print("✅ Correlation Heatmap Created!")

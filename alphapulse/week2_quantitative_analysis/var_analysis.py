@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-# Load returns
+# Load returns dataset
 returns = pd.read_csv(
     'alphapulse/data/processed/daily_returns.csv'
 )
@@ -11,7 +11,7 @@ returns = returns.drop(columns=['Date'])
 
 print("\n95% Value at Risk (VaR)\n")
 
-# Calculate VaR for each stock
+# Calculate VaR
 for stock in returns.columns:
 
     var_95 = np.percentile(

@@ -26,7 +26,7 @@ stock_prices.csv
 - XOM
 - WMT
 - VZ
-- ^GSPC
+- GSPC
 
 ## Data Cleaning Summary
 - Missing values handled successfully

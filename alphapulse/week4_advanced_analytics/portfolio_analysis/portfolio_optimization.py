@@ -1,33 +1,47 @@
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 
 # Load dataset
-df = pd.read_csv('alphapulse/week3_dashboard/data_preparation/final_dataset.csv')
+df = pd.read_csv(
+    'alphapulse/week3_dashboard/data_preparation/final_dataset.csv'
+)
 
-# Select return columns
-returns = df[['AAPL_Return', 'MSFT_Return', 'NVDA_Return', 'TSLA_Return']]
+# Select stock return columns
+returns = df[
+    ['AAPL_Return', 'MSFT_Return', 'NVDA_Return', 'TSLA_Return']
+]
 
-# Average returns
+# Calculate average return
 mean_returns = returns.mean()
 
-# Risk calculation
+# Calculate risk (standard deviation)
 risk = returns.std()
 
-# Plot Risk vs Return
-plt.figure(figsize=(10,6))
+# Create figure
+plt.figure(figsize=(10, 6))
 
-plt.scatter(risk, mean_returns)
+# Scatter plot
+plt.scatter(risk, mean_returns, s=120)
 
 # Add stock labels
 for stock in returns.columns:
-    plt.annotate(stock, (risk[stock], mean_returns[stock]))
+    plt.annotate(
+        stock.replace('_Return', ''),
+        (risk[stock], mean_returns[stock]),
+        xytext=(5, 5),
+        textcoords='offset points'
+    )
 
-plt.title('Portfolio Risk vs Return')
+# Chart formatting
+plt.title('Portfolio Risk vs Return Analysis')
 plt.xlabel('Risk (Standard Deviation)')
-plt.ylabel('Expected Return')
+plt.ylabel('Average Daily Return')
+plt.grid(True)
+plt.tight_layout()
 
 # Save chart
-plt.savefig('alphapulse/week4_advanced_analytics/outputs/portfolio_optimization.png')
+plt.savefig(
+    'alphapulse/week4_advanced_analytics/outputs/portfolio_optimization.png'
+)
 
 print("✅ Portfolio Optimization Completed!")

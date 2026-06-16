@@ -2,79 +2,83 @@
 
 ## Overview
 
-AlphaPulse is a financial analytics and stock market monitoring project focused on analyzing stock performance, volatility, and market trends using Python and Power BI.
+AlphaPulse is a financial analytics project focused on stock market analysis, risk monitoring, and investment insights using Python and Power BI.
 
-This dashboard was developed as part of Week 3 to visualize insights generated from quantitative financial analysis performed in previous stages of the project.
+In Week 3, I developed an interactive dashboard to visualize stock performance, returns analysis, sector trends, and overall market behavior based on the processed financial dataset created in previous weeks.
 
 ---
 
 ## Objectives
 
-- Analyze stock market performance trends
-- Compare daily returns of major stocks
-- Visualize market volatility
-- Monitor banking and technology sector performance
-- Create an interactive dashboard for financial insights
+- Analyze stock market performance using historical data  
+- Compare returns and volatility of major stocks  
+- Monitor technology and banking sector performance  
+- Track overall market trends using S&P 500  
+- Build an interactive dashboard for financial analysis  
 
 ---
 
 ## Dashboard Features
 
 ### KPI Cards
-- Average Apple Returns
-- Average Microsoft Returns
-- Average Tesla Returns
-- Average S&P 500 Returns
 
-### Interactive Visualizations
-- Tech stock performance trends
-- Daily returns comparison
-- Banking stock analysis
-- Market index trend analysis
-- Stock movement over time
+- Average Apple Price  
+- Average Microsoft Price  
+- Highest NVIDIA Price  
+- Average Tesla Return  
+- Portfolio Risk Score  
 
-### Filters & Slicers
-- Year filter
-- Quarter filter
-- Month filter
+### Visualizations
+
+- Top Tech Stocks Performance (AAPL, MSFT, NVDA, TSLA)  
+- Daily Returns Comparison  
+- Banking Stocks Analysis (JPM & BAC)  
+- S&P 500 Market Trend Analysis  
+
+### Filters
+
+- Interactive Date Range Filter  
 
 ---
 
 ## Technologies Used
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Power BI
+- Python  
+- Pandas  
+- NumPy  
+- Matplotlib  
+- Power BI  
+- Git & GitHub  
 
 ---
 
 ## Dataset Information
 
-The dataset contains historical stock market data collected using the yfinance Python library.
+Historical stock market data was collected using the yfinance Python library.
 
 ### Stocks Included
-- Apple (AAPL)
-- Microsoft (MSFT)
-- NVIDIA (NVDA)
-- Tesla (TSLA)
-- JPMorgan (JPM)
-- Bank of America (BAC)
-- Pfizer (PFE)
-- Exxon Mobil (XOM)
-- Walmart (WMT)
-- Verizon (VZ)
-- S&P 500 (^GSPC)
+
+- Apple (AAPL)  
+- Microsoft (MSFT)  
+- NVIDIA (NVDA)  
+- Tesla (TSLA)  
+- JPMorgan (JPM)  
+- Bank of America (BAC)  
+- Pfizer (PFE)  
+- Exxon Mobil (XOM)  
+- Walmart (WMT)  
+- Verizon (VZ)  
+- S&P 500 (^GSPC)  
 
 ---
 
 ## Key Insights
 
-- Tesla showed higher volatility compared to most stocks
-- Microsoft and Apple demonstrated relatively stable growth trends
-- Banking stocks showed strong positive correlation
-- The S&P 500 displayed long-term recovery and market growth patterns
+- Tesla showed relatively higher return volatility  
+- Apple and Microsoft showed stable long-term growth  
+- Banking stocks demonstrated steady market movement  
+- NVIDIA showed strong price growth among technology stocks  
+- S&P 500 reflected overall long-term market growth trend  
 
 ---
 
@@ -86,12 +90,13 @@ The dataset contains historical stock market data collected using the yfinance P
 
 ## Learning Outcomes
 
-Through this dashboard project, I learned:
-- Financial data visualization
-- Interactive dashboard development
-- Time-series trend analysis
-- KPI reporting
-- Power BI dashboard design
-- Financial analytics concepts
+Through this project, I learned:
+
+- Financial data visualization  
+- Power BI dashboard development  
+- KPI creation and reporting  
+- Stock performance analysis  
+- Risk and return comparison  
+- Interactive dashboard design  
 
 ---

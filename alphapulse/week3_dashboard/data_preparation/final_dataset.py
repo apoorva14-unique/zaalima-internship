@@ -1,13 +1,3 @@
-"""
-AlphaPulse - Enhanced Dashboard Dataset Builder
--------------------------------------------------
-Upgrades the original final_dataset.py to produce a richer, "dashboard-ready"
-dataset so Power BI has enough to power a stock selector, sector grouping,
-risk benchmarking, and trend signals -- not just raw price/return columns.
-
-Run this from your alphapulse/ project root (same place the original script ran from).
-"""
-
 import pandas as pd
 import numpy as np
 
@@ -17,8 +7,6 @@ import numpy as np
 prices = pd.read_csv('alphapulse/data/raw/stock_prices.csv')
 returns = pd.read_csv('alphapulse/data/processed/daily_returns.csv')
 
-# Ensure Date is parsed as an actual date (not text) -- Power BI needs this
-# for the date slicer to work properly and for time-intelligence DAX later.
 prices['Date'] = pd.to_datetime(prices['Date'])
 returns['Date'] = pd.to_datetime(returns['Date'])
 
@@ -34,8 +22,6 @@ final_df = prices.merge(returns, on='Date', suffixes=('_Price', '_Return'))
 price_cols = [c for c in final_df.columns if c.endswith('_Price')]
 tickers = [c.replace('_Price', '') for c in price_cols]
 
-# Sector mapping -- update this if your tickers differ.
-# This single addition is what lets you add a "Sector" slicer in Power BI.
 SECTOR_MAP = {
     'AAPL': 'Technology',
     'MSFT': 'Technology',
@@ -84,9 +70,7 @@ for ticker in tickers:
 # ----------------------------------------------------------------------
 # 5. BUILD A LONG-FORMAT TABLE (this is the real fix for Power BI)
 # ----------------------------------------------------------------------
-# Wide format (one column per ticker) is why your dashboard can't filter
-# by stock today. Long format -- one row per Date+Ticker -- is what lets
-# you add a single "Stock" slicer that filters every visual at once.
+
 records = []
 for ticker in tickers:
     price_col = f'{ticker}_Price'
@@ -114,8 +98,6 @@ for ticker in tickers:
 
 long_df = pd.concat(records, ignore_index=True)
 
-# Flag rows above/below the 20-day moving average -> simple trend signal
-# you can turn into a "Bullish/Bearish" indicator visual in Power BI
 long_df['TrendSignal'] = np.where(
     long_df['Price'] > long_df['MA20'], 'Above MA20 (Bullish)',
     np.where(long_df['Price'] < long_df['MA20'], 'Below MA20 (Bearish)', 'Neutral')

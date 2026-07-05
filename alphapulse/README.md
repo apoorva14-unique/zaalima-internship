@@ -2,43 +2,37 @@
 
 ## Overview
 
-AlphaPulse is a complete end-to-end Financial Analytics and Stock Market Analysis project developed using Python, Power BI, and advanced quantitative analytics techniques.
+AlphaPulse is an end-to-end Financial Market Analytics project developed using **Python** and **Power BI** to analyze historical stock market data, evaluate financial risk, generate investment insights, and build interactive dashboards.
 
-This project focuses on:
-- Financial data collection
-- Data preprocessing and cleaning
-- Quantitative stock market analysis
-- Financial risk evaluation
-- Forecasting techniques
-- Portfolio optimization
-- Interactive Power BI dashboard development
-- Workflow automation
+The project covers the complete analytics workflow—from data collection and preprocessing to quantitative analysis, dashboard development, forecasting, portfolio optimization, and workflow automation.
 
-The project was developed as part of a Financial Analytics & Data Analytics Internship Project.
+Developed as part of a **Financial Analytics & Data Analytics Internship**.
 
 ---
 
-# Technologies Used
+# Tech Stack
 
-## Programming & Analytics
+### Programming & Analytics
 - Python
 - Pandas
 - NumPy
 - Matplotlib
 
-## Visualization
+### Business Intelligence
 - Power BI
 
-## Development Tools
+### Development Tools
 - VS Code
 - Git
 - GitHub
 
 ---
 
-# Dataset Information
+# Dataset
 
-The dataset contains historical stock market data for major companies and market indices including:
+Historical stock market data collected using the **yfinance** library.
+
+### Stocks Included
 
 - Apple (AAPL)
 - Microsoft (MSFT)
@@ -50,40 +44,54 @@ The dataset contains historical stock market data for major companies and market
 - Exxon Mobil (XOM)
 - Walmart (WMT)
 - Verizon (VZ)
-- S&P 500 Index (^GSPC)
+- S&P 500 (^GSPC)
 
 ---
 
-# Project Structure
+## Project Structure
 
-```bash
+```text
 alphapulse/
+│
+├── README.md
 │
 ├── data/
 │   ├── raw/
+│   │   ├── cleaned_stock_data.csv
 │   │   └── stock_prices.csv
 │   │
 │   └── processed/
-│       ├── correlation_heatmap.png
 │       ├── daily_returns.csv
+│       ├── correlation_heatmap.png
 │       └── monte_carlo_simulation.png
 │
+├── reports/
+│   ├── README.md
+│   ├── alphapulse_dashboard.png
+│   ├── correlation_heatmap.png
+│   ├── daily_returns.csv
+│   ├── monte_carlo_simulation.png
+│   ├── moving_average_strategy.png
+│   ├── portfolio_optimization.png
+│   └── stock_forecast.png
+│
 ├── week1_data_collection/
-│   ├── cleaning_notes.md
+│   ├── data_fetch.py
 │   ├── data_cleaning.py
-│   └── data_fetch.py
+│   └── cleaning_notes.md
 │
 ├── week2_quantitative_analysis/
+│   ├── returns_analysis.py
 │   ├── correlation_heatmap.py
 │   ├── monte_carlo.py
-│   ├── returns_analysis.py
 │   ├── var_analysis.py
 │   └── README.md
 │
 ├── week3_dashboard/
 │   ├── data_preparation/
+│   │   ├── final_dataset.py
 │   │   ├── final_dataset.csv
-│   │   └── final_dataset.py
+│   │   └── final_dataset_long.csv
 │   │
 │   ├── powerbi/
 │   │   └── alphapulse_dashboard.pbix
@@ -93,247 +101,234 @@ alphapulse/
 │   │
 │   └── README.md
 │
-├── week4_advanced_analytics/
-│   ├── automation/
-│   │   └── automated_pipeline.py
-│   │
-│   ├── forecasting/
-│   │   ├── moving_average_strategy.py
-│   │   └── stock_forecasting.py
-│   │
-│   ├── outputs/
-│   │   ├── moving_average_strategy.png
-│   │   ├── portfolio_optimization.png
-│   │   └── stock_forecast.png
-│   │
-│   ├── portfolio_analysis/
-│   │   └── portfolio_optimization.py
-│   │
-│   └── README.md
-│
-└── README.md
+└── week4_advanced_analytics/
+    ├── forecasting/
+    │   ├── moving_average_strategy.py
+    │   └── stock_forecasting.py
+    │
+    ├── portfolio_analysis/
+    │   └── portfolio_optimization.py
+    │
+    ├── automation/
+    │   └── automated_pipeline.py
+    │
+    ├── outputs/
+    │   ├── moving_average_strategy.png
+    │   ├── portfolio_optimization.png
+    │   └── stock_forecast.png
+    │
+    └── README.md
 ```
 
 ---
 
-# Week 1 – Data Collection & Cleaning
+# Week 1 – Data Collection & Preparation
 
 ## Objectives
-- Import historical stock market data
+
+- Collect historical stock market data
 - Clean and preprocess financial datasets
-- Prepare data for quantitative analysis
+- Prepare data for analysis
 
----
+### Tasks Performed
 
-## Tasks Performed
-- Imported stock market dataset
-- Handled missing values
-- Cleaned inconsistent records
-- Converted date columns into proper format
-- Structured dataset for analysis workflows
+- Imported stock price data
+- Cleaned missing values
+- Standardized date formats
+- Prepared structured datasets for analysis
 
----
+### Outcome
 
-## Files Created
-- data_fetch.py
-- data_cleaning.py
-- cleaning_notes.md
-
----
-
-## Outcome
-Successfully prepared a clean financial dataset for advanced analytics and dashboard development.
+A clean and reliable dataset ready for financial analytics.
 
 ---
 
 # Week 2 – Quantitative Financial Analysis
 
 ## Objectives
-- Analyze stock market performance
-- Measure financial returns and risk
-- Study stock correlations
+
+- Analyze stock returns
+- Evaluate investment risk
+- Measure stock correlations
 - Generate analytical insights
 
----
+### Modules Developed
 
-## Modules Developed
+- Daily Returns Analysis
+- Correlation Heatmap
+- Value at Risk (VaR)
+- Monte Carlo Simulation
 
-### 1. Daily Returns Analysis
-Calculated percentage-based daily returns for all stocks.
+### Outputs
 
-### 2. Correlation Heatmap
-Visualized relationships between stocks to identify market correlations.
+- Daily Returns Dataset
+- Correlation Heatmap
+- Monte Carlo Simulation
 
-### 3. Value at Risk (VaR)
-Measured downside financial risk for investments.
+### Key Insights
 
-### 4. Monte Carlo Simulation
-Simulated future stock price movements using probability distributions.
-
----
-
-## Files Created
-- returns_analysis.py
-- correlation_heatmap.py
-- var_analysis.py
-- monte_carlo.py
+- Tesla showed the highest volatility.
+- Apple and Microsoft demonstrated relatively stable growth.
+- Banking stocks displayed positive correlation.
+- The S&P 500 reflected long-term market trends.
 
 ---
 
-## Outputs Generated
-- daily_returns.csv
-- correlation_heatmap.png
-- monte_carlo_simulation.png
-
----
-
-## Key Insights
-- Tesla showed higher volatility compared to other stocks
-- Microsoft and Apple demonstrated relatively stable growth
-- Banking stocks showed strong positive correlation
-- S&P 500 reflected overall market trends
-
----
-
-# Week 3 – Financial Dashboard Development
+# Week 3 – Interactive Financial Dashboard
 
 ## Objectives
-- Build an interactive Power BI dashboard
-- Visualize stock performance and market trends
-- Create business-oriented financial analytics reports
+
+Build a professional Power BI dashboard for analyzing stock performance, sector trends, investment growth, and market risk.
 
 ---
 
 ## Dashboard Features
 
+### Interactive Filters
+
+- Stock (Ticker)
+- Sector
+- Date Range
+- Trend Signal
+
 ### KPI Cards
-- Average Apple Price
-- Average Microsoft Price
-- Highest NVIDIA Price
-- Average Tesla Return
+
+- Average Portfolio Return %
+- Average Daily Return
+- Maximum Volatility
+- Investment Growth Index
+- Stocks Tracked
 
 ### Visualizations
-- Top Tech Stocks Performance
-- Daily Returns Comparison
-- Banking Stocks Analysis
-- S&P 500 Market Trend
 
-### Interactive Components
-- Date slicer
-- Dynamic filtering
-- Interactive visual exploration
+- Stock Price Trend Over Time
+- Sector Performance (Average Return %)
+- 5-Year Cumulative Return by Stock
+- Moving Average Analysis (MA20 & MA50)
+- Risk vs Return Analysis
+- 20-Day Volatility Trend
 
 ---
 
-## Dashboard Design Highlights
+## Dashboard Highlights
+
+- Fully interactive dashboard
+- Dynamic filtering using slicers
+- Multi-stock comparison
+- Sector-wise performance analysis
+- Trend signal identification
 - Professional financial dashboard layout
-- Large responsive visualization design
-- Clean analytical storytelling
-- Business-style formatting and alignment
 
 ---
 
 ## Dashboard Preview
 
-### AlphaPulse Financial Analytics Dashboard
-
 ![AlphaPulse Dashboard](week3_dashboard/visuals/alphapulse_dashboard.png)
-
-The dashboard provides:
-- Stock performance tracking
-- Financial trend analysis
-- Daily returns comparison
-- Banking sector insights
-- S&P 500 market movement visualization
-- Interactive date filtering
 
 ---
 
-## Files Created
-- final_dataset.py
-- final_dataset.csv
-- alphapulse_dashboard.pbix
-- alphapulse_dashboard.png
+## Enhanced Dataset Engineering
+
+To support interactive dashboard functionality, the dataset was enhanced by generating:
+
+- Moving Average (20-Day)
+- Moving Average (50-Day)
+- 20-Day Rolling Volatility
+- Cumulative Returns
+- Trend Signal (Bullish/Bearish)
+- Sector Classification
+
+Two datasets were created:
+
+- **final_dataset.csv** (Wide Format)
+- **final_dataset_long.csv** (Long Format for Power BI)
 
 ---
 
 # Week 4 – Advanced Financial Analytics
 
 ## Objectives
-- Perform advanced stock analysis
-- Implement forecasting strategies
-- Optimize portfolio analysis
-- Automate analytics workflows
 
----
+Extend the project with forecasting, portfolio optimization, and workflow automation.
 
-## Modules Developed
+### Modules Developed
 
-### 1. Moving Average Strategy
-- Calculated moving averages
-- Identified market momentum and trends
-- Visualized stock movement patterns
+### Moving Average Strategy
 
-### 2. Stock Forecasting
-- Forecasted future stock movement trends
-- Compared actual vs predicted values
+- 20-Day Moving Average
+- 50-Day Moving Average
+- Trend Identification
 
-### 3. Portfolio Optimization
-- Analyzed portfolio risk vs expected return
-- Compared stock performance for diversification
+### Stock Forecasting
 
-### 4. Automated Analytics Pipeline
+- Rolling Mean Forecast
+- Trend Visualization
+
+### Portfolio Optimization
+
+- Risk vs Return Analysis
+- Multi-stock comparison
+- Portfolio diversification insights
+
+### Automated Pipeline
+
 - Automated execution of all analytics scripts
-- Simplified workflow management
+- Simplified workflow
 
 ---
 
-## Files Created
+## Outputs
 
-### Forecasting
-- moving_average_strategy.py
-- stock_forecasting.py
-
-### Portfolio Analysis
-- portfolio_optimization.py
-
-### Automation
-- automated_pipeline.py
+- Moving Average Strategy Chart
+- Stock Forecast Chart
+- Portfolio Optimization Chart
 
 ---
 
-## Outputs Generated
-- moving_average_strategy.png
-- stock_forecast.png
-- portfolio_optimization.png
+# Skills Demonstrated
+
+- Financial Data Analysis
+- Data Cleaning & Preparation
+- Exploratory Data Analysis (EDA)
+- Time-Series Analysis
+- Moving Average Analysis
+- Rolling Volatility Analysis
+- Risk & Return Analysis
+- Portfolio Optimization
+- Forecasting
+- Interactive Dashboard Development
+- KPI Design
+- Data Visualization
+- Power BI
+- Python
+- Git & GitHub
 
 ---
 
-## Key Learnings
+# Key Learnings
 
-Through this project, I gained practical experience in:
+This project strengthened my understanding of:
 
-- Financial data analysis
-- Quantitative analytics
-- Risk management concepts
-- Stock market analysis
-- Power BI dashboard development
-- Data visualization
-- Forecasting techniques
-- Portfolio optimization
-- Git & GitHub workflow
-- End-to-end analytics project development
+- Financial Analytics
+- Stock Market Analysis
+- Quantitative Finance
+- Business Intelligence
+- Dashboard Storytelling
+- Data Engineering for BI
+- Portfolio Risk Analysis
+- Forecasting Techniques
+- End-to-End Analytics Workflow
 
 ---
 
 # Future Improvements
 
-- Machine Learning based stock prediction
-- Real-time stock market API integration
-- Sharpe Ratio analysis
-- CAPM implementation
-- Interactive web dashboards
-- Advanced portfolio simulations
-- Real-time analytics automation
+- Machine Learning-based Stock Prediction
+- Real-time Stock Market API Integration
+- Sharpe Ratio & CAPM Analysis
+- Portfolio Allocation Optimization
+- Real-time Power BI Dashboard
+- Predictive Analytics using LSTM/Prophet
+- Interactive Web Dashboard using Streamlit
 
 ---
